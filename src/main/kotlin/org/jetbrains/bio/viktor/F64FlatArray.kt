@@ -359,3 +359,21 @@ open class F64FlatArray protected constructor(
         }
     }
 }
+
+/**
+ * Wraps a given array.
+ *
+ * Viewer method.
+ */
+fun DoubleArray.asF64Array(): F64FlatArray {
+    return F64FlatArray.create(this)
+}
+
+/**
+ * Wraps a given region of the array.
+ *
+ * Viewer method.
+ */
+fun DoubleArray.asF64Array(offset: Int, size: Int): F64FlatArray {
+    return F64FlatArray.create(this, offset, 1, size)
+}
